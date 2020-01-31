@@ -15,11 +15,12 @@ class CSequenceCompensator: public ISequenceCompensator
 
     private:
         void InitBackground();
-
+        void UpdateBackgroundMask();
         cv::Mat m_matBackground;
-        cv::Mat matBackgroundLabel;
-        cv::Mat matCurFrame;
-        std::vector<cv::Rect> vecRectObjRegion;
+        cv::Mat m_matBackgroundMask;
+        cv::Mat m_matCurFrame;
+        std::vector<cv::Rect> m_vecRectObjRegion;
+        std::vector<cv::Rect> m_vecRectObjRegionPrev;
 
 };
 }
