@@ -19,12 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\work\commlib\jsoncpp\makefiles\msvc2017\lib_json.vcxproj">
+      <Project>{1e6c2c1c-6453-4129-ae3f-0ee8e6599c89}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\libvideo_compensator\vcproj\VideoCompensator.vcxproj">
       <Project>{a3f24ea0-d655-4c3c-be18-bdca0c3d425f}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\test_sequence_compensator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\test_utility.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

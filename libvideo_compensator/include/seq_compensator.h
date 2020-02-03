@@ -22,7 +22,7 @@ class ISequenceCompensator
 };
 
 typedef std::unique_ptr<ISequenceCompensator> PtrSequenceCompensator;
-
+PtrSequenceCompensator CreateSequenceCompensator();
 }
 
 

@@ -1,19 +1,18 @@
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch.hpp"
-#include "opencv2/videoio.hpp"
-#include "opencv2/highgui.hpp"
-#include "../../../libvideo_compensator/include/seq_compensator.h"
+#include "test_utility.h"
 
 namespace Ivs
 {
 SCENARIO("Test Init Sequence Compensator")
 {
+    std::vector<TInputImageMeta> vecInputMeta;
 
 }
 
 SCENARIO("Test Background Recover Simple")
 {
-    std::vector<TInputImageMeta> vecInputMeta;
+    auto vecInputMeta = ReadImageMeta(strTestFolder);
 
     auto pSeqCompensator = CreateSequenceCompensator();
 
@@ -26,5 +25,6 @@ SCENARIO("Test Background Recover Simple")
         }
     }
 
+    CHECK(pSeqCompensator->IsBackgroundRecover());
 }
 }

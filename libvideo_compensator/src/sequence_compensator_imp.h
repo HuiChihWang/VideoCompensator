@@ -7,6 +7,7 @@ class CSequenceCompensator: public ISequenceCompensator
 {
     public:
         CSequenceCompensator() = default;
+        ~CSequenceCompensator();
 
         void SetInputMeta(const TInputImageMeta& tInput) override;
         void Process() override;
@@ -17,7 +18,9 @@ class CSequenceCompensator: public ISequenceCompensator
         void InitBackground();
         void UpdateBackgroundMask();
         cv::Mat m_matBackground;
+
         cv::Mat m_matBackgroundMask;
+
         cv::Mat m_matCurFrame;
         std::vector<cv::Rect> m_vecRectObjRegion;
         std::vector<cv::Rect> m_vecRectObjRegionPrev;
