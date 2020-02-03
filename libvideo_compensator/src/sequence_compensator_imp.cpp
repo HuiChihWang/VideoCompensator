@@ -26,11 +26,12 @@ void CSequenceCompensator::SetInputMeta(const TInputImageMeta& tInput)
 
 void CSequenceCompensator::Process()
 {
-    for (auto& rect : m_vecRectObjRegionPrev)
+    if (m_matBackgroundMask.empty())
     {
-        m_matCurFrame(rect).copyTo(m_matBackground(rect));
+        return;
     }
 
+    m_matCurFrame.copyTo(m_matBackground, m_matBackgroundMask);
     UpdateBackgroundMask();
 }
 

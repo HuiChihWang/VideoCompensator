@@ -25,6 +25,7 @@ SCENARIO("Test Background Recover Simple")
         }
     }
 
+
     CHECK(pSeqCompensator->IsBackgroundRecover());
 }
 }
